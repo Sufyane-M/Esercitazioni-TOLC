@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOLC PSI - Domande Singole Animate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body onload="showQuestion()">
+    <header>TOLC PSI - Domande Singole</header>
+    <div class="container">
+        <button id="toggle-text-button" class="btn secondary" onclick="toggleText()">Mostra Testo</button>
+
+        <section id="brano" class="hidden">
+            <h2 style="text-align: center; font-size: 50px;">Brano</h2>
+            <h2 style="text-align: center; font-size: 30px;">Comprensione del testo e conoscenza della lingua italiana - Testo 1</h2>
+
+            <p>Quando si tratta di spiegare i meccanismi che regolano la socializzazione della persona, ci
+                rivolgiamo naturalmente agli psicologi delle diverse scuole. Non si tratta tuttavia di ricostruire
+                qui tutto il processo di sviluppo e di strutturazione della personalità; alla sociologia è
+                sufficiente attingere ai lavori degli psicologi per ciò che riguarda più particolarmente la
+                formazione di quella che si potrebbe chiamare “personalità sociale” o più esattamente lo sviluppo
+                dell’attitudine all’azione sociale e l’acquisizione dei suoi requisiti: norme, valori, simboli ecc.
+                È questa una distinzione che non piace a tutti gli psicologi. Costoro ci diranno, non senza ragione,
+                che la personalità è globale e che non si presta a una tale chirurgia. Noi siamo costretti a
+                mantenere ugualmente questa distinzione analitica, per comodità di esposizione.</p>
+
+            <p>Il problema che bisogna risolvere si pone in termini di motivazione e si può formulare nel modo
+                seguente: in che modo una persona umana – in particolare il bambino, ma anche l’adulto – è portata a
+                orientare la propria azione secondo i motivi, le aspirazioni, gli scopi che le sono proposti da una
+                cultura dominante in una data collettività, facendo presumere che, vista dall’esterno, la sua
+                condotta subisca la costrizione di una pressione e si adegui alla conformità e alla
+                standardizzazione? Più brevemente, ci si può chiedere: in che modo una persona sviluppa la
+                motivazione necessaria per un’azione normativamente orientata? Se una persona, agendo in conformità
+                alle norme e ai valori di una collettività o di una cultura, segue in ciò la propria coscienza
+                morale e risponde a un bisogno che considera “normale” o “naturale”, è perché è positivamente
+                motivata ad agire così.</p>
+
+            <p>Ora, si sa che una tale motivazione non è inscritta nella natura biologica dell’uomo e che non fa
+                neppure parte della “essenza della natura umana”, soddisfabile da oggetti differenti e da svariati
+                modi di fare. Un cucciolo che succhia il latte per la prima volta sembra obbedire a un impulso
+                interno, a un istinto, perché potrà farlo prima ancora di avere aperto gli occhi e di avere visto la
+                madre che glielo indica. È l’ordine naturale che lo governa. Ma l’occidentale che preferisce
+                mangiare con il coltello e la forchetta, e nel maneggiarli sa distinguere le “buone” dalle “cattive”
+                maniere, non ha ereditato né questa preferenza né questo giudizio insieme al bisogno biologico che
+                ha di mangiare e di bere. È l’ordine della cultura che lo governa. In che modo l’ordine della
+                cultura s’impone all’uomo?</p>
+
+            <p>In un modo più generale, è il problema che è stato posto da Hobbes nel <em>Leviatano</em>. Hobbes ha
+                infatti efficacemente dimostrato che occorreva spiegare come mai la società esistesse e permanesse
+                senza diventare una “guerra di tutti contro tutti”. In altri termini, si è chiesto Hobbes, che cosa
+                fa sì che gli uomini non ricorrano tutti alla frode e alla violenza nel conseguimento dei loro scopi
+                personali? Come avviene che essi possano mantenere relativamente stabile una società invece di
+                massacrarsi e di uccidersi a vicenda? Come spiegare che l’uomo sia in genere motivato interiormente
+                a seguire le norme sociali, ad aderire ai valori del suo ambiente, a identificarsi con dei “Noi”?
+            </p>
+
+            <p>La risposta, o almeno parte della risposta, risiede nei meccanismi psichici della socializzazione
+                umana. Senza troppo addentrarsi nei dettagli, e semplificando le cose in maniera accettabile, si può
+                dire che esistono due meccanismi principali della socializzazione, che sono: l’apprendimento e
+                l’interiorizzazione dell’altro.</p>
+
+            <p>L’apprendimento consiste nell’acquisizione di riflessi, abitudini, atteggiamenti, che si inscrivono
+                nell’organismo e nella psiche della persona guidando la sua condotta. L’imitazione, l’applicazione
+                di ricompense o di punizioni, le prove e gli errori sono i quattro procedimenti principali
+                attraverso i quali si realizza l’apprendimento.</p>
+
+            <p>Per quanto riguarda l’interiorizzazione, essa completa il precedente meccanismo: infatti,
+                specchiandosi nello sguardo degli altri, una persona costruisce il proprio Sé attraverso l’immagine
+                che crede di aver loro offerto e attraverso i giudizi che attribuisce loro nei propri confronti. La
+                coscienza esistenziale, la coscienza di esistere e di essere se stessi è dunque il prodotto, al
+                tempo stesso, dell’intuizione delle percezioni del Sé attraverso l’altro e della comunicazione con
+                gli altri.</p>
+        </section>
+
+        <!-- Sezione delle domande -->
+        <div id="question-section">
+            <div id="question-container" class="question">
+                <h3 id="question-text"></h3>
+                <div id="options-container" class="options"></div>
+            </div>
+
+            <div id="explanation" class="explanation"></div>
+
+            <button class="btn" onclick="checkAnswer()">Correggi</button>
+            <button class="btn secondary" onclick="nextQuestion()">Prossima Domanda</button>
+            <button class="btn secondary" style="float: right;" onclick="previousQuestion()">Domanda Precedente</button>
+        </div>
+
+        <!-- Sezione del resoconto -->
+        <div id="summary-section" style="display: none;">
+            <!-- Il resoconto verrà generato qui -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

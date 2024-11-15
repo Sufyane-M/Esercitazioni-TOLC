@@ -1,0 +1,332 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f9f9f9;
+    --text-color: #333;
+    --error-color: #e74c3c;
+    --transition-speed: 0.4s;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    text-align: left; /* Allineamento a sinistra */
+    font-size: 1.8em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    position: relative;
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Stili per la sezione delle domande */
+.question {
+    margin-bottom: 30px;
+}
+
+.question h3 {
+    font-size: 1.6em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s;
+    font-weight: bold;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+.options {
+    margin-bottom: 20px;
+}
+
+.options label {
+    display: block;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.options input[type="radio"] {
+    display: none;
+}
+
+.options label:hover {
+    background-color: #e0f7e9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.options input[type="radio"]:checked + label {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* Stili per i pulsanti */
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+    margin-top: 30px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn.secondary {
+    background-color: #ddd;
+    color: #555;
+    width: 100%;
+    max-width: 350px;
+}
+
+.btn.secondary:hover {
+    background-color: #ccc;
+}
+
+.btn.secondary[disabled],
+.btn.secondary:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Stili per la spiegazione */
+.explanation {
+    display: none;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    font-size: 1em;
+    animation: fadeIn 1s;
+    font-weight: bold;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+.explanation.correct {
+    background-color: #e0f7e9;
+    color: #2d6a4f;
+    border: 1px solid #4CAF50;
+}
+
+.explanation.incorrect {
+    background-color: #fdecea;
+    color: var(--error-color);
+    border: 1px solid #e74c3c;
+}
+
+/* Classe nascosta */
+.hidden {
+    display: none;
+}
+
+/* Stili per la sezione del resoconto */
+.summary-header {
+    text-align: center; /* Allineamento al centro */
+    margin-bottom: 20px;
+}
+
+.summary-header h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center; /* Allineamento al centro */
+}
+
+.summary-header p {
+    font-size: 1em;
+    color: var(--text-color);
+    text-align: center; /* Allineamento al centro */
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item .summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.summary-item .summary-header p {
+    flex: 1;
+    margin: 0;
+    font-weight: bold;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+.summary-item .icon {
+    font-size: 2em;
+    margin-left: 10px;
+}
+
+.icon-correct {
+    color: #4CAF50;
+}
+
+.icon-incorrect {
+    color: #e74c3c;
+}
+
+.summary-item p {
+    margin: 10px 0;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+.summary-total {
+    background-color: #e0f7e9;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    text-align: center; /* Allineamento al centro */
+}
+
+.summary-total1 {
+    background-color: #e0f7e9;
+    border-radius: 12px;
+    align-items: center;
+    text-align: center; /* Allineamento al centro */
+}
+.summary-total h3 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.summary-total .btn {
+    margin-top: 20px;
+    max-width: none;
+    width: auto;
+}
+
+.correct {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Stili per le intestazioni */
+h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+h3 {
+    margin-top: 30px;
+    color: #2d6a4f;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-align: left; /* Allineamento a sinistra */
+}
+
+/* Stili per la sezione del brano */
+#brano {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#brano h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+#brano p {
+    margin-bottom: 15px;
+    text-align: left;
+    line-height: 1.6;
+}
+
+/* Stili per i pulsanti nella sezione delle domande */
+#question-section .btn {
+    max-width: 100%;
+    width: 100%;
+}
+
+#question-section .btn.secondary {
+    width: calc(50% - 10px);
+    margin-right: 10px;
+}
+
+#question-section .btn.secondary:last-of-type {
+    margin-right: 0;
+    float: right;
+}
+
+/* Clear floats */
+#question-section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#toggle-text-button {
+    display: block;
+    margin: 20px auto; /* Aggiunto un margine superiore/inferiore per separarlo dagli altri elementi */
+    width: auto;
+}
