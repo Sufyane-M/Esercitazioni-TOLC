@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz di Matematica di Base</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include MathJax (una sola volta) -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body onload="initializeQuiz()">
+    <header style="font-size: 30px; text-align: center;">Quiz di Matematica di Base</header>
+    <div class="container">
+        <!-- Sezione delle domande -->
+        <div id="question-section">
+            <!-- Barra di navigazione delle domande -->
+            <div id="question-nav" class="question-nav">
+                <!-- I riquadri delle domande verranno generati dinamicamente -->
+            </div>
+
+            <div id="question-container" class="question">
+                <h3 id="question-text"></h3>
+                <div id="options-container" class="options"></div>
+            </div>
+
+            <div id="explanation" class="explanation"></div>
+            <div class="button-group">
+                <button class="btn secondary" onclick="previousQuestion()">Domanda Precedente</button>
+                <button class="btn" onclick="checkAnswer()">Correggi</button>
+                <button class="btn secondary" onclick="nextQuestion()">Prossima Domanda</button>
+            </div>
+        </div>
+
+        <!-- Sezione del resoconto -->
+        <div id="summary-section" style="display: none;">
+            <!-- Il resoconto verrà generato qui -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+<!-- Toast Notification -->
+<div id="toast" class="toast hidden" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-content">
+        <span class="toast-icon">⚠️</span>
+        <span class="toast-message">Per favore, seleziona una risposta prima di correggere.</span>
+    </div>
+</div>
+</body>
+
+</html>
